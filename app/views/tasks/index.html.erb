@@ -1,0 +1,13 @@
+<h1>My tasks</h1>
+
+<% @tasks.each do |task| %>
+  <h2><%= link_to task.title, task_path(task) %></h2>
+  <p><%= task.completed %></p>
+  <% if task.completed %>
+   <input type="checkbox" name="completed" checked>
+  <% else %>
+   <input type="checkbox" name="completed">
+  <% end %>
+<% end %>
+
+<h2><%= link_to "Add new task", new_task_path %></h2>
